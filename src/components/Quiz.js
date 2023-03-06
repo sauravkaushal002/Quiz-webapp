@@ -70,12 +70,20 @@ const Submit =(isCorrect)=>{
   }
 
 
+
   const nextQ= currentQ+1 ;
   if (nextQ<questionsBank.length){
      setCurrentQ(currentQ+1)
   }
   else{
     setShowScore(true)
+    notifications.show({
+      
+      title: 'Play again!',
+      message: 'Game has been ended',
+    })
+    
+
   }
 }
 
@@ -88,6 +96,8 @@ notifications.show({
   title: 'Good luck',
   message: 'Quiz has been Started!',
 })
+  
+
 }
   return (
     <>
@@ -95,15 +105,20 @@ notifications.show({
   
     <div className='grid justify-center'>
   
-    {showScore?(
+    {showScore?( 
+
+      
       <div className='   bg-[#e8e7dd] mt-72 rounded-2xl py-10 px-10 '>
       <div className='text-2xl font-bold '>You have scored {score} out of {questionsBank.length}
-      
+
       
       </div>
+   
       <button onClick={playagain}className=' bg-red-400 py-2 ml-24 mt-4 px-2 rounded-md'>Play again </button>
       </div>
-    ):(
+      
+    )
+    :(
       <>
       <div className=''>
                 <h1 className=' mt-8 text-center text-2xl  font-bold  text-green-800'>Choose the correct option </h1>
@@ -136,6 +151,8 @@ notifications.show({
               )
             
           })}
+
+          
           </div>
         </div>
         </>
