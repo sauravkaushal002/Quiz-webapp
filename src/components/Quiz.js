@@ -105,8 +105,8 @@ notifications.show({
 
     <div className="flex justify-center mt-8 ">
       <div className='gird justify-center'>
-      <p className='text-[#000000] font-semibold'>You have only 10 seconds to complete the quiz</p>
-          <h1 className='ml-32'>{mint}:{sec}</h1>
+      <p className='text-[#000000] font-semibold lg:text-2xl'>You have only 10 seconds to complete the quiz</p>
+          <h1 className=' lg:ml-48 ml-32'>{mint}:{sec}</h1>
       </div>
      
           </div>
